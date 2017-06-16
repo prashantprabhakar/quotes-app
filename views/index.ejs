@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Quotes </title>
+</head>
+<body>
+	<h1 style='text-align: center;'> Quotes App </h1>
+	<h3> Quotes by Great peoples </h3>
+	<ul class="quotes">
+	  <% for(var i=0; i<quotes.length; i++) {%>
+	    <li class="quote">
+	      <span><b><%= quotes[i].name + ":" %></b></span>
+	      <span><%= quotes[i].quote %></span>
+	    </li>
+	  <% } %>
+ 	</ul>
+
+	<h2> Add a new Quote </h2>
+ 	<form action="/quotes" method="POST">
+ 		<div class="form-group row">
+	 		<label class='col-md-2'> Author Name : </label>
+		    <input class='col-md-2' type="text" placeholder="name" name="name">
+		</div>
+		<div class="form-group row">
+		    <label class='col-md-2'> Quote : </label>
+		    <input class='col-md-2' type="text" placeholder="quote" name="quote"> 
+		</div>
+		<div class="form-group row">
+	    	<button class='col-md-1' type="submit">Submit</button>
+	    </div>
+ 	</form>
+
+	<!-- You can use this for updating via forms -->
+ 	<!-- <form action="/updatequote" method="POST">
+		<h3>Replace last quote: </h3>
+		<div class='row'>
+			<label class='col-md-2'> Author Name </label>
+			<input class='col-md-2' type="text" placeholder="Author Name" name="name">
+		</div>
+		<div class='row'>
+			<label class='col-md-2'> Quote </label>
+			<input class='col-md-2' type="text" placeholder="quote" name="quote"
+		</div>
+		<div class='row'>
+			<button class='col-md-1' type="submit" id="update"> Update </button>
+		</div>
+ 	</form> -->
+
+ 	<!-- You can use this for deleting via forms -->
+	<!-- <form action="/deletequote" method="POST">
+		 	<h2>Delete quote by:</h2>
+		 	<div class="form-group row">
+		 		<label class='col-md-2'> Author Name </label>
+				<input class='col-md-2' type="text" placeholder="Author Name" name="name">
+			</div>
+			<div class="form-group row">
+		 		<button class='col-md-1' type="submit"> Delete </button>
+		 	</div>
+	</form> -->
+
+	<!-- Replace last quote -->
+	<div>
+		<h2>Replace last quote: </h2>
+		<div class='row'>
+			 <label class='col-md-2' > Author Name </label>
+			 <input class='col-md-2' type="text" placeholder="Author Name" name="name" id="txtUpdateAuthorName"> </br>
+		</div>
+		<div class='row'>
+			 <label class='col-md-2'> Quote </label>
+			 <input class='col-md-2' type="text" placeholder="quote" name="quote" id="txtUpdateQuote">
+		</div>
+		<div class='row'>
+			<button class='col-md-1' id="update"> Update </button>
+		</div>
+	</div>
+
+	<!-- Delete first quote -->
+	<div>
+	 	<h2>Delete first quote by:</h2>
+	 	<div class='row'>
+		 	 <label class='col-md-2'> Author Name </label>
+			 <input class='col-md-2' type="text" placeholder="Author Name" name="name" id='txtDeleteAuthorName'> 
+		</div>
+		<div class='row'>
+	 		<button class='col-md-1' id="delete"> Delete </button>
+	 	</div>
+
+	 	 </br> </br> </br>
+	</div>
+
+
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
